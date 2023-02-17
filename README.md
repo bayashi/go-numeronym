@@ -21,7 +21,7 @@
 
 ## For CLI
 
-You can use `n7m` command.
+You can use `n7m` command to make numeronym.
 
     $ echo 'internationalization' | n7m
     i18n
