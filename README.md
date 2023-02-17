@@ -1,6 +1,6 @@
 # go-numeronym
 
-Provide the function `Numeronize` to contract a word as Numeronym.
+`go-numeronym` provides the function `Numeronize` to contract a word as Numeronym.
 
 ## Usage
 
