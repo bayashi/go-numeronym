@@ -12,19 +12,26 @@
     )
 
     func main() {
-        fmt.Println(Numeronize("internationalization")) // i18n
+        fmt.Println(numeronym.Numeronize("internationalization")) // i18n
     }
+
+## For CLI
+
+You can use `n7m` command to make numeronym in several ways.
+
+    $ n7m internationalization
+    i18n
+
+    $ echo internationalization | n7m
+    i18n
+
+NOTE that it's not acceptable to be input a file to STDIN:
+
+    $ n7m < file.txt; # Error
 
 ## Installation
 
     go get github.com/bayashi/go-numeronym
-
-## For CLI
-
-You can use `n7m` command to make numeronym.
-
-    $ echo 'internationalization' | n7m
-    i18n
 
 ## License
 
@@ -32,4 +39,4 @@ MIT
 
 ## Author
 
-Dai Okabayashi
+Dai Okabayashi: @bayashi
