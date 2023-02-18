@@ -2,18 +2,29 @@ package main
 
 import (
 	"fmt"
-	"github.com/bayashi/go-numeronym"
 	"io"
 	"log"
 	"os"
 	"strings"
+	"syscall"
+
+	"github.com/bayashi/go-numeronym"
+	"golang.org/x/crypto/ssh/terminal"
 )
 
 func main() {
-	in, err := io.ReadAll(os.Stdin)
-	if err != nil {
-		log.Fatal(err)
+	for _, arg := range os.Args {
+		fmt.Println(numeronym.Numeronize(strings.TrimRight(arg, "\n")))
 	}
 
-	fmt.Println(numeronym.Numeronize(strings.TrimRight(string(in), "\n")))
+	if terminal.IsTerminal(syscall.Stdin) && !terminal.IsTerminal(0) {
+		in, err := io.ReadAll(os.Stdin)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Println(numeronym.Numeronize(strings.TrimRight(string(in), "\n")))
+	} else {
+		fmt.Println("Error: Could not convert from a file.")
+	}
 }
