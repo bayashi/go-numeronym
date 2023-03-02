@@ -1,4 +1,4 @@
-module github.com/mattn/go-numeronym
+module github.com/bayashi/go-numeronym
 
 go 1.19
 
