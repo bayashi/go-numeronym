@@ -13,8 +13,8 @@ import (
 )
 
 func main() {
-	for _, arg := range os.Args {
-		if arg == "-" {
+	for i, arg := range os.Args {
+		if i == 0 || arg == "-" {
 			continue
 		}
 		fmt.Println(numeronym.Numeronize(strings.TrimRight(arg, "\n")))
