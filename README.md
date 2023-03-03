@@ -25,9 +25,10 @@ You can use `n7m` command to make numeronym in several ways.
     $ echo internationalization | n7m
     i18n
 
-NOTE that it's not acceptable to be input a file to STDIN:
-
-    $ n7m < file.txt; # Error
+    cat file.txt
+    internationalization
+    $ n7m < file.txt
+    i18n
 
 ## Installation
 

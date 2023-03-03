@@ -9,7 +9,7 @@ import (
 	"syscall"
 
 	"github.com/bayashi/go-numeronym"
-	"golang.org/x/crypto/ssh/terminal"
+	"golang.org/x/term"
 )
 
 func main() {
@@ -17,14 +17,12 @@ func main() {
 		fmt.Println(numeronym.Numeronize(strings.TrimRight(arg, "\n")))
 	}
 
-	if terminal.IsTerminal(syscall.Stdin) && !terminal.IsTerminal(0) {
+	if !term.IsTerminal(syscall.Stdin) {
 		in, err := io.ReadAll(os.Stdin)
 		if err != nil {
 			log.Fatal(err)
 		}
 
 		fmt.Println(numeronym.Numeronize(strings.TrimRight(string(in), "\n")))
-	} else {
-		fmt.Println("Error: Could not convert from a file.")
 	}
 }
