@@ -14,6 +14,9 @@ import (
 
 func main() {
 	for _, arg := range os.Args {
+		if arg == "-" {
+			continue
+		}
 		fmt.Println(numeronym.Numeronize(strings.TrimRight(arg, "\n")))
 	}
 
