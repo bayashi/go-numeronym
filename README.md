@@ -25,14 +25,14 @@ You can use `n7m` command to make numeronym in several ways.
     $ echo internationalization | n7m
     i18n
 
-    cat file.txt
+    $ cat file.txt
     internationalization
     $ n7m < file.txt
     i18n
 
-## Installation
+### Installation of `n7m`
 
-    go get github.com/bayashi/go-numeronym
+    go install github.com/bayashi/go-numeronym/cmd/n7m@latest
 
 ## License
 
