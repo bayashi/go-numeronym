@@ -1,0 +1,14 @@
+builds:
+  - env:
+      - CGO_ENABLED=0
+    main: ./cmd/n7m
+    id: "n7m"
+    binary: n7m
+    goos:
+      - linux
+      - darwin
+      - windows
+archives:
+  - format_overrides:
+      - goos: windows
+        format: zip
